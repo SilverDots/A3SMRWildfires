@@ -1,4 +1,4 @@
-# Have the predominant causes of manmade wildfires changed over time?
+# Have the predominant causes of major manmade wildfires changed over time?
 
 Team members:
 matvj250, skyylerf, rtran04
