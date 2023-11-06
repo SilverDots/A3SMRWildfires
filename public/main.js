@@ -49,7 +49,6 @@ function introClickCallback() {
 
 let header = document.querySelector("header");
 let mediaQuery = window.matchMedia("(min-width: 992px)");
-console.log(mediaQuery);
 let introPrompt = document.createElement("p");
 introPrompt.classList.add("pad-title");
 // Changes the text on intro screen depending on media query.

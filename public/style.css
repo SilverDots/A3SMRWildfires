@@ -56,6 +56,7 @@ header em, #intro em {
 
 .scroll-guide {
   background-color: transparent;
+  text-align: center;
   margin: 0;
   display: block;
   opacity: 0;
@@ -107,6 +108,12 @@ header em, #intro em {
   justify-content: center;
   align-items: center;
   font-style: normal;
+  text-align: left;
+}
+
+#middle div {
+  width: 90%;
+  padding: 1rem 0;
 }
 
 @keyframes fadeOut {
@@ -131,10 +138,6 @@ header em, #intro em {
 }
 
 @media (min-width: 768px) {
-  .scroll-guide {
-    text-align: center;
-  }
-
   .fact-1 {
     margin-left: 10vw;
     margin-right: 45vw;
@@ -163,5 +166,10 @@ header em, #intro em {
 
   .fact-2 {
     margin-left: 60vw;
+  }
+
+  #middle div {
+    width: 70%;
+    margin: 0 15vw;
   }
 }
