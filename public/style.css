@@ -2,9 +2,10 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-body {
+/* body {
   padding: 64px 32px;
   font: 18px/1.5 "Avenir", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
 }
@@ -23,13 +24,90 @@ header {
 footer {
   padding-top: 16px;
   text-align: right;
-}
+} */
 
-h1 {
+/* h1 {
   margin-bottom: 32px;
   color: #492a7c;
+} */
+
+/* a {
+  text-decoration: none;
+} */
+
+
+/* .parallax {
+  height: 100vh;
+  height: 1900px;
+  perspective: 10px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-a {
-  text-decoration: none;
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
 }
+
+.layer-front {
+  margin-top: 200px;
+  background-image: url("test3.png");
+  background-size: cover;
+  background-attachment: fixed;
+  transform: translateZ(2px) scale(0.75);
+}
+
+.layer-back {
+  background-image: url("enya-hodgson-8ZWFcHKnXRU-unsplash.jpg");
+  background-size: cover;
+  transform: translateZ(0px);
+  height: 1900px;
+} */
+
+.parallax {
+  background-color: black;
+  /* perspective: 1px; */
+  position: relative;
+  height: 1920px;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.layer-back {
+  background-image: url("enya-hodgson-8ZWFcHKnXRU-unsplash.jpg");
+  background-size: cover;
+}
+
+.layer-front {
+  background-image: url('test3.png');
+  top: 1280px;
+  background-size: cover !important;
+  height: 1280px;
+  transform: translateY(0);
+}
+
+.lemon {
+  height: 500px;
+  background-color: black;
+}
+
+.lemon p {
+  color: white;
+}
+
+.chicken {
+  background-color: black;
+  height: 1920px;
+  opacity: 0;
+}
+
