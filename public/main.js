@@ -44,13 +44,14 @@ function introClickCallback() {
         scrollGuide.style.animationName = "fadeIn";
         scrollGuide.style.animationDuration = "2s";
         scrollGuide.style.animationFillMode = "forwards";
-    }, 9000)
+    }, 10000)
 };
 
 let header = document.querySelector("header");
 let mediaQuery = window.matchMedia("(min-width: 992px)");
 let introPrompt = document.createElement("p");
 introPrompt.classList.add("pad-title");
+
 // Changes the text on intro screen depending on media query.
 if (mediaQuery.matches) {
     introPrompt.textContent = "Click to Explore";
