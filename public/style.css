@@ -5,76 +5,72 @@
   box-sizing: border-box;
 }
 
-/* body {
-  padding: 64px 32px;
-  font: 18px/1.5 "Avenir", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+body {
+  font-family: "Geologica", "Avenir", "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
 }
 
-header,
-footer {
-  max-width: 90ex;
-  margin: 0 auto;
+main {
+  display: none;
 }
 
 header {
-  padding-bottom: 32px;
-  border-bottom: 2px solid #ccc;
-}
-
-footer {
-  padding-top: 16px;
-  text-align: right;
-} */
-
-/* h1 {
-  margin-bottom: 32px;
-  color: #492a7c;
-} */
-
-/* a {
-  text-decoration: none;
-} */
-
-
-/* .parallax {
   height: 100vh;
-  height: 1900px;
-  perspective: 10px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-.parallax-layer {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   width: 100vw;
+  padding: 1rem;
+  position: absolute;
+  overflow-x: hidden;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
 }
 
-.layer-front {
-  margin-top: 200px;
-  background-image: url("test3.png");
-  background-size: cover;
-  background-attachment: fixed;
-  transform: translateZ(2px) scale(0.75);
+header em, #intro em {
+  font-style: normal;
+  font-weight: bold;
+  color: crimson;
 }
 
-.layer-back {
-  background-image: url("enya-hodgson-8ZWFcHKnXRU-unsplash.jpg");
-  background-size: cover;
-  transform: translateZ(0px);
-  height: 1900px;
-} */
+.header-red-box {
+  background-color: crimson;
+  height: 4rem;
+  width: 85%;
+}
 
-.parallax {
-  background-color: black;
-  /* perspective: 1px; */
+.pad-title {
+  padding-bottom: 4rem;
+}
+
+#intro {
   position: relative;
   height: 1920px;
 }
 
+.intro-div, .scroll-guide {
+  display: none;
+  padding: 1rem 1rem;
+  background-color: rgba(83, 83, 83, 0.3);
+  margin: 20vh 0;
+}
+
+.scroll-guide {
+  background-color: transparent;
+  margin: 0;
+  display: block;
+  opacity: 0;
+}
+
+.fact-1 {
+  margin-top: 10vh;
+  margin-right: 10vw;
+}
+
+.fact-2 {
+  margin-left: 10vw;
+  text-align: right;
+}
+
 .parallax-layer {
   position: absolute;
   top: 0;
@@ -83,31 +79,89 @@ footer {
   right: 0;
 }
 
-.layer-back {
-  background-image: url("enya-hodgson-8ZWFcHKnXRU-unsplash.jpg");
+.layer-mountains {
+  background-image: url("img/mountains.jpg");
   background-size: cover;
 }
 
-.layer-front {
-  background-image: url('test3.png');
-  top: 1280px;
+.layer-trees {
+  background-image: url("img/trees.png");
   background-size: cover !important;
+  top: 1280px;
   height: 1280px;
-  transform: translateY(0);
 }
 
-.lemon {
-  height: 500px;
+.layer-shadow {
   background-color: black;
-}
-
-.lemon p {
-  color: white;
-}
-
-.chicken {
-  background-color: black;
-  height: 1920px;
+  /* Background image size is 1920px - added 10px covers thin line at bottom of layer-mountains. */
+  height: 1930px;
   opacity: 0;
 }
 
+#middle {
+  height: 100vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .scroll-guide {
+    text-align: center;
+  }
+
+  .fact-1 {
+    margin-left: 10vw;
+    margin-right: 45vw;
+  }
+
+  .fact-2 {
+    margin-left: 45vw;
+    margin-right: 10vw;
+  }
+}
+
+@media (min-width: 992px) {
+  header {
+    padding: 0 25vw;
+    text-align: left;
+  }
+
+  .header-red-box {
+    margin-right: 12vw;
+    width: 100%;
+  }
+
+  .fact-1 {
+    margin-right: 60vw;
+  }
+
+  .fact-2 {
+    margin-left: 60vw;
+  }
+}
