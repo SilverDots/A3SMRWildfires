@@ -7,7 +7,6 @@
   <!-- Uncomment if you want your page to NOT be indexed by search engines: -->
   <!-- <meta name="robots" content="none"> -->
   <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
   <link rel="stylesheet" href="style.css" />
   <script src="https://kit.fontawesome.com/a8837c9916.js" crossorigin="anonymous"></script>
   <title>Have the predominant causes of major manmade wildfires changed over time?</title>
@@ -51,31 +50,67 @@
         </div>
         <p class="pad-bottom-1 color-white">Their distribution may vary by time and place, and quantifying these changes may help us reduce the rate of wildfires through societal means like education and laws, rather than environmental means.</p>
         <p class="pad-bottom-4 color-white">This sparks the question:</p>
-        <p class="research-question">Have the <em>predominant causes</em> of major <em>manmade wildfires</em> changed over time?</p>
+        <p class="research-question pad-bottom-1">Have the <em>predominant causes</em> of major <em>manmade wildfires</em> changed over time?</p>
+        <p class="pad-bottom-2 color-white">Scroll on or drag the map below to focus on specific wildfires, select legend items or pie chart slices to filter by manmade causes, or hover over individual data points or pie chart slices for wildfire information and year counts respectively.</p>
       </div>
-      <!-- <div class="container viz">
-        <div id="observablehq-chart-7e50fd2e"></div>
-        <p>Credit: <a href="https://observablehq.com/d/0c8a020616fb713f@1122">A3 Project by Skyyler Fine&#039;s Workspace</a></p>
-      </div> -->
+      <div class="container viz">
+        <div id="observablehq-chart-ddcac918" class="map"></div>
+        <p>Credit: <a href="https://observablehq.com/d/0c8a020616fb713f">A3 Project by Skyyler Fine&#039;s Workspace</a></p>
+        <p class="pad-bottom-3">View the original dataset <a href="https://catalog.data.gov/dataset/national-interagency-fire-occurrence-sixth-edition-1992-2020-feature-layer">here</a>.</p>
+      </div>
+      <div class="container write-up">
+        <div>
+          <h2 class="pad-bottom-1">Design Rationale</h2>
+          <hr class="margin-bottom-1">
+          <p class="pad-bottom-2">
+            We decided early on that our visualization would be geographic. Initially, we considered a simpler visualization such as bar graphs since our research question relates to the distribution of manmade wildfires' specific causes, an entirely numerical measure. However, we realized that a geographic visualization would allow for more information to be encoded, such as wildfire size. It would also lead to more enriching interactions for a user, as they are given the ability to explore other trends as they wish, such as the most prevalent wildfire causes per state.
+          </p>
+          <p class="pad-bottom-2">
+            As our research question developed, we realized that we wanted to view trends over time, so we added a scrubber which allows a user to separately examine data from different years. We included a zoom function, for we believed this to be a necessity for a geographic visualization of this scale. Users are able to hover over individual wildfires and see information on each, such as the fire's name and its discovery date. Users can also click on items in the cause legend to isolate fires with specific causes. These choices both further a user's ability to interact with and have an enriching exploration of the data.
+          </p>
+          <p class="pad-bottom-2">
+            Finally, the map is accompanied by a pie chart that allows users to directly observe the distribution of each fire cause, along with how this relationship changes over time. This way, users can obtain a more direct answer to our research question while still having the “freedom” of the map. Originally, we were going to display the fire count associated with each cause as text, but the pie chart inherently displays percentages, making it a superior visual encoding for the situation.
+          </p>
+        </div>
+        <div>
+          <h2 class="pad-bottom-1">Development Process</h2>
+          <hr class="margin-bottom-1">
+          <p class="pad-bottom-2">
+            Matthew first proposed the initial project topic and accompanying visualization methods, wrangled the dataset, performed exploratory data analysis, helped debug D3 code, and wrote the writeup. Skyyler found the dataset for our visualization, coded the interactive legend, figured out how to project every wildfire geographically, and implemented the pie chart. Richard implemented zooming, helped code the interactive features of the legend and pie chart, combined the pie chart and map into one visualization, and designed the web page.
+          </p>
+          <p class="pad-bottom-2">
+            The exploratory data analysis was the most straightforward aspect of the project, and it led to an important discovery. The dataset contained rankings for every fire from A to G that were representative of size. The average size of an A fire is 0.11 acres, while the average size of a G fire is 22344 acres. Around 600,000 out of the 735,294 wildfires in our wrangled dataset were A and B fires. We had already worried about having too much data present on the map at once, which would only hinder our visualization's effectiveness. Combined with the fact that major wildfires would be more relevant to a hypothetical viewer anyway, we removed A and B grade wildfires from our data, and we changed our research question to focus on “major” wildfires only.
+          </p>
+          <p class="pad-bottom-2">
+            D3 debugging took the most time for us by far, as each new addition interfered with some previous interaction technique. However, using the D3 examples provided in class and from team members' previous projects, we were able to resolve all these problems. At any rate, they often boiled down to a couple incorrect variable names.
+          </p>
+          <p class="pad-bottom-2">
+            The implementation and design of the web page also took a substantial amount of time, for we wanted to provide a compelling narrative to accompany our data visualization. As such, we focused on making our web page responsive across different devices and screen sizes. One issue we observed was that our visualization width was quite large, which resulted in smaller devices being unable to render our full visualization. Our solution was to include an external link to our visualization for smaller devices, while keeping the visualization on the web page for laptops and desktops.
+          </p>
+          <p>
+            Overall, developing the application took roughly 25 hours in total, with all team members contributing relatively equally.
+          </p>
+        </div>
+      </div>
     </section>
   </main>
-  <!-- <footer >
-    <p>
-      <a href="https://gitlab.cs.washington.edu/cse442/23au/a3/a3smrwildfires">Repository</a>
-      <br>
-      <a href="https://courses.cs.washington.edu/courses/cse442/23au/">CSE 442 Data Visualization</a>
-      <br>
-      <a href="https://www.washington.edu">University of Washington</a>
-    </p>
-  </footer> -->
+  <footer>
+    <div class="container">
+      <ul>
+        <li><a href="https://gitlab.cs.washington.edu/cse442/23au/a3/a3smrwildfires">Repository</a></li>
+        <li><a href="https://courses.cs.washington.edu/courses/cse442/23au/">CSE 442 Data Visualization</a></li>
+        <li><a href="https://www.washington.edu">University of Washington</a></li>
+      </ul>
+    </div>
+  </footer>
 
-  <!-- <script type="module">
+  <script type="module">
     import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-    import define from "https://api.observablehq.com/d/0c8a020616fb713f@1122.js?v=4";
+    import define from "https://api.observablehq.com/d/0c8a020616fb713f.js?v=4";
     new Runtime().module(define, name => {
-      if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-7e50fd2e"));
+      if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-ddcac918"));
     });
-    </script> -->
+  </script>
   <script src="main.js"></script>
 </body>
 

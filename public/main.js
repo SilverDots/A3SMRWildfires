@@ -5,7 +5,6 @@ window.addEventListener("scroll", () => {
     let trees = document.querySelector(".layer-trees");
     layerShadow.style.opacity = top / 900;
     trees.style.transform = "translateY(-" + top  + "px)";
-    console.log(top);
 });
 
 // Helper function which adds a fade in animation for a given element and duration.
@@ -70,13 +69,24 @@ header.addEventListener("click", introClickCallback, {once: true});
 window.addEventListener("scroll", () => {
     if (loadAnalysis) {
         if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
-            console.log('here');
             let middle = document.querySelector(".middle");
             for (let i = 0; i < middle.children.length; i++) {
                 setTimeout(() => {
                     let child = middle.children[i];
                     addFadeIn(child, 2);
                 }, 1500 * i);
+            }
+            if (window.matchMedia("(min-width: 1150px)").matches) {
+                let analysis = document.querySelector("#analysis");
+                let viz = document.querySelector(".viz");
+                let writeUp = document.querySelector(".write-up");
+                let footer = document.querySelector("footer");
+                setTimeout(() => {
+                    addFadeIn(viz, 2);
+                    addFadeIn(writeUp, 2);
+                    addFadeIn(footer, 2);
+                    analysis.style.height = "auto";
+                }, (middle.children.length - 1) * 1500 + 500);
             }
             loadAnalysis = false;
         }

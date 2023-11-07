@@ -107,6 +107,37 @@ em {
   justify-content: center;
 }
 
+footer {
+  background-color: black;
+  display: none;
+  padding: 2rem 0;
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding-bottom: 1rem;
+}
+
+.viz p {
+  color: crimson;
+}
+
+a {
+  color: white;
+}
+
+a:visited {
+  color: gold;
+}
+
+a:active {
+  color: orange;
+}
+
 .container.middle {
   display: flex;
   flex-wrap: wrap;
@@ -116,7 +147,7 @@ em {
 }
 
 .container {
-  width: 90%;
+  width: 90vw;
   padding: 0 1rem;
 }
 
@@ -124,15 +155,27 @@ em {
   padding-bottom: 1rem;
 }
 
+.pad-bottom-2 {
+  padding-bottom: 2rem;
+}
+
+.pad-bottom-3 {
+  padding-bottom: 3rem;
+}
+
 .pad-bottom-4 {
   padding-bottom: 4rem;
+}
+
+.margin-bottom-1 {
+  margin-bottom: 1rem;
 }
 
 .margin-bottom-3 {
   margin-bottom: 3rem;
 }
 
-.color-white {
+.color-white, .write-up p {
   color: white;
 }
 
@@ -146,8 +189,12 @@ hr {
   font-weight: bold;
 }
 
-.middle > * {
+.middle > *, .viz, .write-up {
   opacity: 0;
+}
+
+.viz, .write-up {
+  display: none;
 }
 
 @keyframes fadeOut {
@@ -216,6 +263,11 @@ hr {
 
   .container {
     width: 70%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
     margin: 0 10vw;
   }
 }
