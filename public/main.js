@@ -76,18 +76,22 @@ window.addEventListener("scroll", () => {
                     addFadeIn(child, 2);
                 }, 1500 * i);
             }
-            if (window.matchMedia("(min-width: 1150px)").matches) {
-                let analysis = document.querySelector("#analysis");
-                let viz = document.querySelector(".viz");
-                let writeUp = document.querySelector(".write-up");
-                let footer = document.querySelector("footer");
-                setTimeout(() => {
-                    addFadeIn(viz, 2);
-                    addFadeIn(writeUp, 2);
-                    addFadeIn(footer, 2);
-                    analysis.style.height = "auto";
-                }, (middle.children.length - 1) * 1500 + 500);
+            let analysis = document.querySelector("#analysis");
+            let viz = document.querySelector(".viz");
+            let writeUp = document.querySelector(".write-up");
+            let footer = document.querySelector("footer");
+            if (!window.matchMedia("(min-width: 1200px)").matches) {
+                let map = document.querySelector(".map");
+                let descrip = document.querySelector(".map-descrip");
+                descrip.style.display = "none";
+                map.style.display = "none";
             }
+            setTimeout(() => {
+                addFadeIn(viz, 2);
+                addFadeIn(writeUp, 2);
+                addFadeIn(footer, 2);
+                analysis.style.height = "auto";
+            }, (middle.children.length - 1) * 1500 + 500);
             loadAnalysis = false;
         }
     }
