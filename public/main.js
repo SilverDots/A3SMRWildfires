@@ -5,6 +5,7 @@ window.addEventListener("scroll", () => {
     let trees = document.querySelector(".layer-trees");
     layerShadow.style.opacity = top / 900;
     trees.style.transform = "translateY(-" + top  + "px)";
+    console.log(top);
 });
 
 // Callback function on header click. Initiates fade in on intro elements.
@@ -44,10 +45,11 @@ function introClickCallback() {
         scrollGuide.style.animationName = "fadeIn";
         scrollGuide.style.animationDuration = "2s";
         scrollGuide.style.animationFillMode = "forwards";
-    }, 10000)
+    }, 9000)
 };
 
 let header = document.querySelector("header");
+let loadAnalysis = false;
 let mediaQuery = window.matchMedia("(min-width: 992px)");
 let introPrompt = document.createElement("p");
 introPrompt.classList.add("pad-title");
@@ -68,3 +70,12 @@ mediaQuery.addEventListener("change", (e) => {
 });
 header.addEventListener("click", introClickCallback, {once: true});
 
+// window.addEventListener("scroll", () => {
+//     //
+//     if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+//         let analysis = document.querySelector("#analysis");
+//         analysis.style.height = "auto";
+//         let chart = document.querySelector("#observablehq-chart-7e50fd2e");
+//         chart.style.display = "block";
+//     }
+// })

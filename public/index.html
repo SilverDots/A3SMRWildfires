@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Uncomment if you want your page to NOT be indexed by search engines: -->
   <!-- <meta name="robots" content="none"> -->
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+  <link rel="stylesheet" href="style.css" />
   <script src="https://kit.fontawesome.com/a8837c9916.js" crossorigin="anonymous"></script>
   <title>Have the predominant causes of major manmade wildfires changed over time?</title>
   <!-- Uncomment if using d3: -->
@@ -18,7 +19,7 @@
   <header>
     <div class="header-red-box"></div>
     <div class="header-content">
-      <h1 class="pad-title">Have the <em>predominant causes</em> of manmade <em>wildfires</em> changed over time?</h1>
+      <h1 class="pad-title">Have the <em>predominant causes</em> of major manmade <em>wildfires</em> changed over time?</h1>
       <p class="pad-title">
         <em>Team Members</em>: Matthew Jack, Skyyler Fine, Richard Tran
       </p>
@@ -42,15 +43,19 @@
       <div class="parallax-layer layer-trees"></div>
       <div class="parallax-layer layer-shadow"></div>
     </section>
-    <section id="middle">
-      <div class="middle-container">
-        <div class="middle-header">
+    <section id="analysis">
+      <div class="container middle">
+        <div>
           <h2 class="pad-bottom-1">Human-related causes of <em>wildfires</em> are many and varied.</h2>
           <hr class="margin-bottom-3">
         </div>
-        <p class="pad-bottom-1 color-white">Although they have remained largely unchanged, their impact on wildfire trends is reflected by time and place.</p>
+        <p class="pad-bottom-1 color-white">Although the causes themselves have remained largely unchanged, their impact on wildfire trends is reflected by time and place.</p>
         <p class="pad-bottom-4 color-white">This sparks the question:</p>
-        <p class="research-question">Have the <em>predominant causes</em> of <em>manmade wildfires</em> changed over time?</p>
+        <p class="research-question">Have the <em>predominant causes</em> of major <em>manmade wildfires</em> changed over time?</p>
+      </div>
+      <div class="container viz">
+        <div id="observablehq-chart-7e50fd2e"></div>
+        <p>Credit: <a href="https://observablehq.com/d/0c8a020616fb713f@1122">A3 Project by Skyyler Fine&#039;s Workspace</a></p>
       </div>
     </section>
   </main>
@@ -64,6 +69,13 @@
     </p>
   </footer> -->
 
+  <!-- <script type="module">
+    import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import define from "https://api.observablehq.com/d/0c8a020616fb713f@1122.js?v=4";
+    new Runtime().module(define, name => {
+      if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-7e50fd2e"));
+    });
+    </script> -->
   <script src="main.js"></script>
 </body>
 

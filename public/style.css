@@ -99,22 +99,25 @@ em {
   opacity: 0;
 }
 
-#middle {
+#analysis {
   height: 100vh;
   background-color: black;
-  color: white;
+  color: orange;
+  padding: 2rem 0;
+  justify-content: center;
+}
+
+.container.middle {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  align-items: left;
   font-style: normal;
   text-align: left;
 }
 
-.middle-container {
+.container {
   width: 90%;
-  padding: 1rem 0;
-  color: orange;
+  padding: 0 1rem;
 }
 
 .pad-bottom-1 {
@@ -139,8 +142,12 @@ hr {
 }
 
 .research-question {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
+}
+
+.viz {
+  display: none;
 }
 
 @keyframes fadeOut {
@@ -207,8 +214,8 @@ hr {
     margin-left: 60vw;
   }
 
-  #middle div {
+  .container {
     width: 70%;
-    margin: 0 15vw;
+    margin: 0 10vw;
   }
 }
