@@ -230,6 +230,10 @@ hr {
     margin-left: 30vw;
     margin-right: 5vw;
   }
+
+  h2, .research-question {
+    font-size: 1.75rem;
+  }
 }
 
 @media (min-width: 768px) {

@@ -91,7 +91,7 @@ window.addEventListener("scroll", () => {
                 addFadeIn(writeUp, 2);
                 addFadeIn(footer, 2);
                 analysis.style.height = "auto";
-            }, (middle.children.length - 1) * 1500 + 500);
+            }, (middle.children.length - 1) * 1500 + 800);
             loadAnalysis = false;
         }
     }
