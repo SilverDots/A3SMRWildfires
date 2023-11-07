@@ -146,8 +146,8 @@ hr {
   font-weight: bold;
 }
 
-.viz {
-  display: none;
+.middle > * {
+  opacity: 0;
 }
 
 @keyframes fadeOut {
@@ -202,7 +202,7 @@ hr {
   }
 
   .header-red-box {
-    margin-right: 12vw;
+    margin-right: 6vw;
     width: 100%;
   }
 

@@ -8,6 +8,14 @@ window.addEventListener("scroll", () => {
     console.log(top);
 });
 
+// Helper function which adds a fade in animation for a given element and duration.
+function addFadeIn(element, duration) {
+    element.style.display = "block";
+    element.style.animationName = "fadeIn";
+    element.style.animationDuration = duration + "s";
+    element.style.animationFillMode = "forwards";
+}
+
 // Callback function on header click. Initiates fade in on intro elements.
 function introClickCallback() {
     let header = document.querySelector("header");
@@ -18,38 +26,27 @@ function introClickCallback() {
 
     setTimeout(() => {
         let main = document.querySelector("main");
-        main.style.display = "block";
-        main.style.animationName = "fadeIn";
-        main.style.animationDuration = "3s";
-        main.style.animationFillMode = "forwards";
+        addFadeIn(main, 3);
     }, 2500);
 
     setTimeout(() => {
         let fact = document.querySelector(".fact-1");
-        fact.style.display = "block";
-        fact.style.animationName = "fadeIn";
-        fact.style.animationDuration = "2s";
-        fact.style.animationFillMode = "forwards";
+        addFadeIn(fact, 2);
     }, 4000)
 
     setTimeout(() => {
         let fact = document.querySelector(".fact-2");
-        fact.style.display = "block";
-        fact.style.animationName = "fadeIn";
-        fact.style.animationDuration = "2s";
-        fact.style.animationFillMode = "forwards";
+        addFadeIn(fact, 2);
     }, 6000)
 
     setTimeout(() => {
         let scrollGuide = document.querySelector(".scroll-guide");
-        scrollGuide.style.animationName = "fadeIn";
-        scrollGuide.style.animationDuration = "2s";
-        scrollGuide.style.animationFillMode = "forwards";
+        addFadeIn(scrollGuide, 2);
     }, 9000)
 };
 
 let header = document.querySelector("header");
-let loadAnalysis = false;
+let loadAnalysis = true;
 let mediaQuery = window.matchMedia("(min-width: 992px)");
 let introPrompt = document.createElement("p");
 introPrompt.classList.add("pad-title");
@@ -70,12 +67,18 @@ mediaQuery.addEventListener("change", (e) => {
 });
 header.addEventListener("click", introClickCallback, {once: true});
 
-// window.addEventListener("scroll", () => {
-//     //
-//     if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
-//         let analysis = document.querySelector("#analysis");
-//         analysis.style.height = "auto";
-//         let chart = document.querySelector("#observablehq-chart-7e50fd2e");
-//         chart.style.display = "block";
-//     }
-// })
+window.addEventListener("scroll", () => {
+    if (loadAnalysis) {
+        if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+            console.log('here');
+            let middle = document.querySelector(".middle");
+            for (let i = 0; i < middle.children.length; i++) {
+                setTimeout(() => {
+                    let child = middle.children[i];
+                    addFadeIn(child, 2);
+                }, 1500 * i);
+            }
+            loadAnalysis = false;
+        }
+    }
+})
