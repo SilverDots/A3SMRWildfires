@@ -69,12 +69,12 @@ header.addEventListener("click", introClickCallback, {once: true});
 window.addEventListener("scroll", () => {
     if (loadAnalysis) {
         let middle = document.querySelector(".middle");
-        if (document.body.scrollHeight >= 1920) {
+        if (document.body.scrollHeight >= 1920 + (window.innerHeight)) {
             for (let i = 0; i < middle.children.length; i++) {
                 setTimeout(() => {
                     let child = middle.children[i];
                     addFadeIn(child, 2);
-                }, 800 * i);
+                }, 900 * i);
             }
             let analysis = document.querySelector("#analysis");
             let viz = document.querySelector(".viz");
@@ -83,15 +83,17 @@ window.addEventListener("scroll", () => {
             if (!window.matchMedia("(min-width: 1200px)").matches) {
                 let map = document.querySelector(".map");
                 let descrip = document.querySelector(".map-descrip");
+                let slider = document.querySelector(".slider");
                 descrip.style.display = "none";
                 map.style.display = "none";
+                slider.style.display = "none";
             }
             setTimeout(() => {
                 addFadeIn(viz, 2);
                 addFadeIn(writeUp, 2);
                 addFadeIn(footer, 2);
                 analysis.style.height = "auto";
-            }, (middle.children.length - 1) * 800 + 500);
+            }, (middle.children.length) * 900 + 500);
             loadAnalysis = false;
         }
     }
