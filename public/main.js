@@ -31,17 +31,17 @@ function introClickCallback() {
     setTimeout(() => {
         let fact = document.querySelector(".fact-1");
         addFadeIn(fact, 2);
-    }, 3000)
+    }, 2500)
 
     setTimeout(() => {
         let fact = document.querySelector(".fact-2");
         addFadeIn(fact, 2);
-    }, 4500)
+    }, 3500)
 
     setTimeout(() => {
         let scrollGuide = document.querySelector(".scroll-guide");
         addFadeIn(scrollGuide, 2);
-    }, 6000)
+    }, 5000)
 };
 
 let header = document.querySelector("header");
@@ -69,7 +69,7 @@ header.addEventListener("click", introClickCallback, {once: true});
 window.addEventListener("scroll", () => {
     if (loadAnalysis) {
         let middle = document.querySelector(".middle");
-        if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+        if (document.body.scrollHeight >= 1920) {
             for (let i = 0; i < middle.children.length; i++) {
                 setTimeout(() => {
                     let child = middle.children[i];
