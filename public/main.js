@@ -31,17 +31,17 @@ function introClickCallback() {
     setTimeout(() => {
         let fact = document.querySelector(".fact-1");
         addFadeIn(fact, 2);
-    }, 3500)
+    }, 3000)
 
     setTimeout(() => {
         let fact = document.querySelector(".fact-2");
         addFadeIn(fact, 2);
-    }, 5000)
+    }, 4500)
 
     setTimeout(() => {
         let scrollGuide = document.querySelector(".scroll-guide");
         addFadeIn(scrollGuide, 2);
-    }, 7000)
+    }, 6000)
 };
 
 let header = document.querySelector("header");
@@ -69,29 +69,29 @@ header.addEventListener("click", introClickCallback, {once: true});
 window.addEventListener("scroll", () => {
     if (loadAnalysis) {
         let middle = document.querySelector(".middle");
-        let intro = document.querySelector("#intro");
-        // console.log(document.documentElement.scrollTop);
-        // console.log(intro.scrollHeight);
-        if (document.documentElement.scrollTop >= intro.style.height) {
-        // if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+        if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
             for (let i = 0; i < middle.children.length; i++) {
                 setTimeout(() => {
                     let child = middle.children[i];
                     addFadeIn(child, 2);
-                }, 900 * i);
+                }, 800 * i);
             }
-            if (window.matchMedia("(min-width: 1150px)").matches) {
-                let analysis = document.querySelector("#analysis");
-                let viz = document.querySelector(".viz");
-                let writeUp = document.querySelector(".write-up");
-                let footer = document.querySelector("footer");
-                setTimeout(() => {
-                    addFadeIn(viz, 2);
-                    addFadeIn(writeUp, 2);
-                    addFadeIn(footer, 2);
-                    analysis.style.height = "auto";
-                }, (middle.children.length - 1) * 900 + 500);
+            let analysis = document.querySelector("#analysis");
+            let viz = document.querySelector(".viz");
+            let writeUp = document.querySelector(".write-up");
+            let footer = document.querySelector("footer");
+            if (!window.matchMedia("(min-width: 1200px)").matches) {
+                let map = document.querySelector(".map");
+                let descrip = document.querySelector(".map-descrip");
+                descrip.style.display = "none";
+                map.style.display = "none";
             }
+            setTimeout(() => {
+                addFadeIn(viz, 2);
+                addFadeIn(writeUp, 2);
+                addFadeIn(footer, 2);
+                analysis.style.height = "auto";
+            }, (middle.children.length - 1) * 800 + 500);
             loadAnalysis = false;
         }
     }

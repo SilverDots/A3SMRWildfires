@@ -51,15 +51,16 @@
         <p class="pad-bottom-1 color-white">Their distribution may vary by time and place, and quantifying these changes may help us reduce the rate of wildfires through societal means like education and laws, rather than environmental means.</p>
         <p class="pad-bottom-4 color-white">This sparks the question:</p>
         <p class="research-question pad-bottom-1">Have the <em>predominant causes</em> of major <em>manmade wildfires</em> changed over time?</p>
-        <p class="pad-bottom-2 color-white">Scroll on or drag the map below to focus on specific wildfires, select legend items or pie chart slices to filter by manmade causes, or hover over individual data points or pie chart slices for wildfire information and year counts respectively.</p>
       </div>
       <div class="container viz">
-        <div id="observablehq-chart-ddcac918" class="map"></div>
-        <p>Credit: <a href="https://observablehq.com/d/0c8a020616fb713f">A3 Project by Skyyler Fine&#039;s Workspace</a></p>
-        <p class="pad-bottom-3">View the original dataset <a href="https://catalog.data.gov/dataset/national-interagency-fire-occurrence-sixth-edition-1992-2020-feature-layer">here</a>.</p>
+        <p class="pad-bottom-2 color-white map-descrip">Scroll on or drag the map below to focus on specific wildfires, select legend items or pie chart slices to filter by manmade causes, or hover over individual data points or pie chart slices for wildfire information and year counts respectively.</p>
+        <div id="observablehq-chart-d03c4bf5" class="map"></div>
+        <div id="observablehq-viewof-yearFilter-d03c4bf5" class="slider pad-bottom-1"></div>
+        <p class="color-crimson map-credit">Credit: <a target="_blank" href="https://observablehq.com/d/0c8a020616fb713f">A3 Project by Skyyler Fine&#039;s Workspace</a></p>
+        <p class="pad-bottom-3 color-crimson dataset">View the original dataset <a target="_blank" href="https://catalog.data.gov/dataset/national-interagency-fire-occurrence-sixth-edition-1992-2020-feature-layer">here</a>.</p>
       </div>
       <div class="container write-up">
-        <div>
+        <div class="design-rationale">
           <h2 class="pad-bottom-1">Design Rationale</h2>
           <hr class="margin-bottom-1">
           <p class="pad-bottom-2">
@@ -72,7 +73,7 @@
             Finally, the map is accompanied by a pie chart that allows users to directly observe the distribution of each fire cause, along with how this relationship changes over time. This way, users can obtain a more direct answer to our research question while still having the “freedom” of the map. Originally, we were going to display the fire count associated with each cause as text, but the pie chart inherently displays percentages, making it a superior visual encoding for the situation.
           </p>
         </div>
-        <div>
+        <div class="dev-process">
           <h2 class="pad-bottom-1">Development Process</h2>
           <hr class="margin-bottom-1">
           <p class="pad-bottom-2">
@@ -97,9 +98,10 @@
   <footer>
     <div class="container">
       <ul>
-        <li><a href="https://gitlab.cs.washington.edu/cse442/23au/a3/a3smrwildfires">Repository</a></li>
-        <li><a href="https://courses.cs.washington.edu/courses/cse442/23au/">CSE 442 Data Visualization</a></li>
-        <li><a href="https://www.washington.edu">University of Washington</a></li>
+        <li><p>&copy; 2023 A3SMRWildfires</p></li>
+        <li><a href="https://gitlab.cs.washington.edu/cse442/23au/a3/a3smrwildfires" target="_blank">Repository</a></li>
+        <li><a href="https://courses.cs.washington.edu/courses/cse442/23au/" target="_blank">CSE 442 Data Visualization</a></li>
+        <li><a href="https://www.washington.edu" target="_blank">University of Washington</a></li>
       </ul>
     </div>
   </footer>
@@ -108,7 +110,9 @@
     import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
     import define from "https://api.observablehq.com/d/0c8a020616fb713f.js?v=4";
     new Runtime().module(define, name => {
-      if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-ddcac918"));
+      if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-d03c4bf5"));
+      if (name === "viewof yearFilter") return new Inspector(document.querySelector("#observablehq-viewof-yearFilter-d03c4bf5"));
+      return ["pieData","pieChart"].includes(name);
     });
   </script>
   <script src="main.js"></script>
