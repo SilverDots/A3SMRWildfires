@@ -26,22 +26,22 @@ function introClickCallback() {
     setTimeout(() => {
         let main = document.querySelector("main");
         addFadeIn(main, 3);
-    }, 2500);
+    }, 2000);
 
     setTimeout(() => {
         let fact = document.querySelector(".fact-1");
         addFadeIn(fact, 2);
-    }, 4000)
+    }, 3500)
 
     setTimeout(() => {
         let fact = document.querySelector(".fact-2");
         addFadeIn(fact, 2);
-    }, 6000)
+    }, 5000)
 
     setTimeout(() => {
         let scrollGuide = document.querySelector(".scroll-guide");
         addFadeIn(scrollGuide, 2);
-    }, 9000)
+    }, 7000)
 };
 
 let header = document.querySelector("header");
@@ -68,13 +68,17 @@ header.addEventListener("click", introClickCallback, {once: true});
 
 window.addEventListener("scroll", () => {
     if (loadAnalysis) {
-        if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
-            let middle = document.querySelector(".middle");
+        let middle = document.querySelector(".middle");
+        let intro = document.querySelector("#intro");
+        // console.log(document.documentElement.scrollTop);
+        // console.log(intro.scrollHeight);
+        if (document.documentElement.scrollTop >= intro.style.height) {
+        // if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
             for (let i = 0; i < middle.children.length; i++) {
                 setTimeout(() => {
                     let child = middle.children[i];
                     addFadeIn(child, 2);
-                }, 1500 * i);
+                }, 900 * i);
             }
             if (window.matchMedia("(min-width: 1150px)").matches) {
                 let analysis = document.querySelector("#analysis");
@@ -86,7 +90,7 @@ window.addEventListener("scroll", () => {
                     addFadeIn(writeUp, 2);
                     addFadeIn(footer, 2);
                     analysis.style.height = "auto";
-                }, (middle.children.length - 1) * 1500 + 500);
+                }, (middle.children.length - 1) * 900 + 500);
             }
             loadAnalysis = false;
         }
