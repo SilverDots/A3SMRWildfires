@@ -31,17 +31,17 @@ function introClickCallback() {
     setTimeout(() => {
         let fact = document.querySelector(".fact-1");
         addFadeIn(fact, 2);
-    }, 2500)
+    }, 3000)
 
     setTimeout(() => {
         let fact = document.querySelector(".fact-2");
         addFadeIn(fact, 2);
-    }, 3500)
+    }, 4250)
 
     setTimeout(() => {
         let scrollGuide = document.querySelector(".scroll-guide");
         addFadeIn(scrollGuide, 2);
-    }, 5000)
+    }, 5500)
 };
 
 let header = document.querySelector("header");
